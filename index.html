@@ -3543,5 +3543,135 @@ setTimeout(function(){
 },500);
 
 </script>
+  <!-- =========================================================
+     PART 5 — NEW LEARNING BRAND
+     ========================================================= -->
+
+<style>
+
+.learnsphere-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  cursor:pointer;
+}
+
+.learnsphere-logo{
+  width:44px;
+  height:44px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:white;
+  font-size:23px;
+  box-shadow:0 5px 15px rgba(79,70,229,.25);
+}
+
+.learnsphere-name{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.learnsphere-name strong{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.4px;
+  color:#1e293b;
+}
+
+.learnsphere-name span{
+  margin-top:4px;
+  font-size:9px;
+  font-weight:700;
+  color:#64748b;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+@media(max-width:600px){
+
+  .learnsphere-logo{
+    width:38px;
+    height:38px;
+    font-size:20px;
+  }
+
+  .learnsphere-name strong{
+    font-size:17px;
+  }
+
+  .learnsphere-name span{
+    font-size:7px;
+  }
+
+}
+
+body.dark .learnsphere-name strong{
+  color:#f8fafc;
+}
+
+body.dark .learnsphere-name span{
+  color:#cbd5e1;
+}
+
+</style>
+
+
+<script>
+
+/* =========================================================
+   CHANGE OLD STUDYHUB BRAND TO LEARNSPHERE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const elements = document.querySelectorAll(
+    "header *, nav *, .navbar *, .header *, .logo *, .brand *"
+  );
+
+  elements.forEach(function(element){
+
+    const text = element.textContent
+      .trim()
+      .toLowerCase();
+
+    if(
+      text === "studyhub" ||
+      text === "study hub"
+    ){
+
+      element.innerHTML = `
+
+        <div class="learnsphere-brand">
+
+          <div class="learnsphere-logo">
+            🎓
+          </div>
+
+          <div class="learnsphere-name">
+
+            <strong>LearnSphere</strong>
+
+            <span>
+              Learn • Practice • Succeed
+            </span>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }
+
+  });
+
+});
+
+</script>
 </body>
 </html>
