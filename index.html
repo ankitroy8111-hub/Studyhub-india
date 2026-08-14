@@ -1,3677 +1,1723 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StudyHub - Classes 8 to 10</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,sans-serif;
-}
+  <title>LearnSphere | Classes 8 to 10</title>
 
-body{
-  background:#f5f7fb;
-  color:#172033;
-  transition:0.3s;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-body.dark{
-  background:#0f172a;
-  color:#f8fafc;
-}
+    body {
+      background: #f5f7fb;
+      color: #172033;
+    }
 
-header{
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
-  color:white;
-}
+    header {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+    }
 
-nav{
-  max-width:1150px;
-  margin:auto;
-  padding:18px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo{
-  font-size:25px;
-  font-weight:bold;
-}
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
 
-nav button{
-  border:0;
-  background:white;
-  color:#4f46e5;
-  padding:10px 16px;
-  border-radius:20px;
-  font-weight:bold;
-  cursor:pointer;
-}
+    nav button {
+      border: 0;
+      background: white;
+      color: #4f46e5;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-.hero{
-  text-align:center;
-  padding:65px 20px 75px;
-}
+    .hero {
+      text-align: center;
+      padding: 60px 20px 70px;
+    }
 
-.hero h1{
-  font-size:45px;
-  margin-bottom:15px;
-}
+    .hero h1 {
+      font-size: 44px;
+      margin-bottom: 15px;
+    }
 
-.hero p{
-  font-size:18px;
-  margin-bottom:25px;
-}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
 
-.search{
-  width:min(650px,95%);
-  padding:16px 22px;
-  border:0;
-  border-radius:30px;
-  font-size:16px;
-  outline:none;
-}
+    .search {
+      width: min(650px, 95%);
+      padding: 16px 22px;
+      border: 0;
+      border-radius: 30px;
+      font-size: 16px;
+      outline: none;
+    }
 
-.container{
-  max-width:1150px;
-  margin:auto;
-  padding:40px 20px;
-}
+    .container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-.section-title{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:25px;
-}
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+      );
+      gap: 20px;
+    }
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-  cursor:pointer;
-  transition:.2s;
-}
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      cursor: pointer;
+      transition: .2s;
+    }
 
-.card:hover{
-  transform:translateY(-5px);
-}
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-.card h3{
-  margin:10px 0;
-}
+    .card h3 {
+      margin: 10px 0;
+    }
 
-.card p{
-  color:#667085;
-  line-height:1.5;
-}
+    .card p {
+      color: #667085;
+      line-height: 1.5;
+    }
 
-.icon{
-  font-size:38px;
-}
+    .icon {
+      font-size: 38px;
+    }
 
-.dark .card{
-  background:#1e293b;
-}
+    .button {
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+    }
 
-.dark .card p{
-  color:#cbd5e1;
-}
+    .primary {
+      background: #4f46e5;
+      color: white;
+    }
 
-.button{
-  border:0;
-  padding:12px 18px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:bold;
-  margin:5px;
-}
+    .secondary {
+      background: #e9e7ff;
+      color: #4338ca;
+    }
 
-.primary{
-  background:#4f46e5;
-  color:white;
-}
+    .panel {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
 
-.secondary{
-  background:#e9e7ff;
-  color:#4338ca;
-}
+    .note {
+      background: #eef2ff;
+      border-left: 5px solid #4f46e5;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 15px 0;
+      line-height: 1.7;
+    }
 
-.back{
-  margin-bottom:20px;
-}
+    .hidden {
+      display: none;
+    }
 
-.panel{
-  background:white;
-  padding:28px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+    footer {
+      margin-top: 50px;
+      padding: 30px;
+      text-align: center;
+      background: #111827;
+      color: white;
+    }
 
-.dark .panel{
-  background:#1e293b;
-}
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 34px;
+      }
 
-.note{
-  background:#eef2ff;
-  border-left:5px solid #4f46e5;
-  padding:18px;
-  border-radius:10px;
-  margin:15px 0;
-  line-height:1.7;
-}
-
-.dark .note{
-  background:#263452;
-}
-
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  background:#e9e7ff;
-  color:#4338ca;
-  border-radius:20px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.question{
-  background:white;
-  border:1px solid #e5e7eb;
-  padding:20px;
-  border-radius:15px;
-  margin:18px 0;
-}
-
-.dark .question{
-  background:#1e293b;
-  border-color:#475569;
-}
-
-.option{
-  display:block;
-  padding:12px;
-  margin:8px 0;
-  background:#f5f7fb;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.dark .option{
-  background:#334155;
-}
-
-.option:hover{
-  background:#e0e7ff;
-}
-
-.result{
-  text-align:center;
-  background:#eef2ff;
-  padding:35px;
-  border-radius:20px;
-  margin-bottom:25px;
-}
-
-.score{
-  font-size:50px;
-  font-weight:bold;
-  color:#4f46e5;
-  margin:15px;
-}
-
-footer{
-  margin-top:50px;
-  padding:30px;
-  text-align:center;
-  background:#111827;
-  color:white;
-}
-
-.hidden{
-  display:none;
-}
-
-@media(max-width:600px){
-  .hero h1{
-    font-size:34px;
-  }
-
-  .container{
-    padding:25px 15px;
-  }
-}
-</style>
+      .container {
+        padding: 25px 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
 
-<nav>
-  <div class="logo">📚 StudyHub</div>
+  <nav>
+    <div class="logo">📚 LearnSphere</div>
 
-  <button onclick="toggleDark()">
-    🌙 Dark Mode
-  </button>
-</nav>
+    <button onclick="toggleDark()">
+      🌙 Dark Mode
+    </button>
+  </nav>
 
-<div class="hero">
+  <div class="hero">
 
-<h1>Learn Smarter with StudyHub</h1>
+    <h1>Learn Smarter with LearnSphere</h1>
 
-<p>
-Classes 8 • 9 • 10 | Notes • Practice • Tests
-</p>
+    <p>
+      Classes 8 • 9 • 10 |
+      Notes • DPP • Tests • Video Solutions
+    </p>
 
-<input
-  id="searchBox"
-  class="search"
-  type="text"
-  placeholder="🔍 Search classes, subjects or chapters..."
-  oninput="searchWebsite()"
->
+    <input
+      id="searchBox"
+      class="search"
+      type="text"
+      placeholder="🔍 Search classes, subjects or chapters..."
+      oninput="searchWebsite()"
+    >
 
-</div>
+  </div>
 
 </header>
 
-
 <main class="container">
 
-<!-- HOME -->
-
-<section id="home">
-
-<h2 class="section-title">
-🎓 Choose Your Class
-</h2>
-
-<div class="grid">
-
-<div class="card" onclick="showClass('8')">
-<div class="icon">🎒</div>
-<h3>Class 8</h3>
-<p>Study material, notes and tests for Class 8.</p>
-</div>
-
-<div class="card" onclick="showClass('9')">
-<div class="icon">📘</div>
-<h3>Class 9</h3>
-<p>Study material, notes and tests for Class 9.</p>
-</div>
-
-<div class="card" onclick="showClass('10')">
-<div class="icon">🎯</div>
-<h3>Class 10</h3>
-<p>Study material, notes and tests for Class 10.</p>
-</div>
-
-</div>
-
-
-<h2 class="section-title" style="margin-top:50px">
-🚀 StudyHub Features
-</h2>
-
-<div class="grid">
-
-<div class="card" onclick="showTests()">
-<div class="icon">📝</div>
-<h3>Tests</h3>
-<p>Take tests and get your result instantly.</p>
-</div>
-
-<div class="card" onclick="showPractice()">
-<div class="icon">🎯</div>
-<h3>Practice</h3>
-<p>Practice questions and improve your preparation.</p>
-</div>
-
-<div class="card" onclick="showAbout()">
-<div class="icon">💡</div>
-<h3>About StudyHub</h3>
-<p>Learn how to use StudyHub effectively.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DYNAMIC CONTENT -->
-
-<section id="content" class="hidden"></section>
-
-</main>
-
-
-<footer>
-
-<h3>📚 StudyHub</h3>
-
-<p>
-Learn • Practice • Test • Improve 🚀
-</p>
-
-<p>
-© 2026 StudyHub
-</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   STUDY CONTENT
-========================= */
-
-const studyData = {
-
-"8": {
-
-"Mathematics": {
-
-"Rational Numbers": `
-<h3>Rational Numbers</h3>
-
-<p>
-A rational number is a number that can be written in the form
-<strong>p/q</strong>, where p and q are integers and q is not zero.
-</p>
-
-<h4>Important Points</h4>
-
-<ul>
-<li>Every integer is a rational number.</li>
-<li>Rational numbers can be positive, negative or zero.</li>
-<li>Two rational numbers can be compared using a common denominator.</li>
-<li>Rational numbers are closed under addition, subtraction and multiplication.</li>
-</ul>
-
-<div class="note">
-📌 Remember: The denominator of a rational number can never be zero.
-</div>
-`,
-
-"Linear Equations": `
-<h3>Linear Equations in One Variable</h3>
-
-<p>
-A linear equation contains a variable whose highest power is 1.
-</p>
-
-<p>
-Example:
-<strong>x + 5 = 12</strong>
-</p>
-
-<p>
-Subtract 5 from both sides:
-<strong>x = 7</strong>
-</p>
-
-<div class="note">
-💡 Always perform the same operation on both sides of an equation.
-</div>
-`,
-
-"Squares and Square Roots": `
-<h3>Squares and Square Roots</h3>
-
-<p>
-The square of a number is obtained by multiplying the number by itself.
-</p>
-
-<p>
-Example: 8 × 8 = 64
-</p>
-
-<p>
-Therefore, the square root of 64 is 8.
-</p>
-
-<div class="note">
-📌 Learn square numbers from 1² to at least 20² for faster calculations.
-</div>
-`,
-
-"Algebraic Expressions": `
-<h3>Algebraic Expressions</h3>
-
-<p>
-An algebraic expression contains numbers, variables and mathematical operations.
-</p>
-
-<p>
-Example:
-<strong>3x + 5</strong>
-</p>
-
-<ul>
-<li>3 is the coefficient.</li>
-<li>x is the variable.</li>
-<li>5 is a constant.</li>
-</ul>
-`
-
-},
-
-"Science": {
-
-"Crop Production": `
-<h3>Crop Production</h3>
-
-<p>
-Crop production involves several stages such as preparation of soil,
-sowing, adding manure or fertilisers, irrigation, protection and harvesting.
-</p>
-
-<div class="note">
-🌱 Main sequence: Soil preparation → Sowing → Irrigation → Protection → Harvesting → Storage
-</div>
-`,
-
-"Microorganisms": `
-<h3>Microorganisms</h3>
-
-<p>
-Microorganisms are very small living organisms that usually cannot be seen
-with the naked eye.
-</p>
-
-<p>
-Major groups include bacteria, fungi, protozoa, algae and some microscopic
-organisms.
-</p>
-
-<div class="note">
-🔬 Some microorganisms are useful in food production and medicine,
-while others can cause diseases.
-</div>
-`,
-
-"Force and Pressure": `
-<h3>Force and Pressure</h3>
-
-<p>
-Force is a push or pull acting on an object.
-</p>
-
-<p>
-Pressure depends on the force and the area over which the force acts.
-</p>
-
-<div class="note">
-📌 For the same force, a smaller area produces greater pressure.
-</div>
-`
-
-},
-
-"English": {
-
-"Grammar": `
-<h3>English Grammar</h3>
-
-<p>
-Important topics include nouns, pronouns, adjectives, verbs,
-tenses, articles, prepositions and subject-verb agreement.
-</p>
-
-<div class="note">
-📖 Tip: Read a sentence carefully before deciding which grammar rule applies.
-</div>
-`,
-
-"Writing Skills": `
-<h3>Writing Skills</h3>
-
-<p>
-Good writing should have a clear beginning, well-organised ideas
-and a suitable conclusion.
-</p>
-
-<ul>
-<li>Understand the topic.</li>
-<li>Plan your main points.</li>
-<li>Use clear language.</li>
-<li>Check spelling and grammar.</li>
-</ul>
-`
-
-},
-
-"Social Science": {
-
-"History": `
-<h3>History</h3>
-
-<p>
-History helps us understand events, people, societies and changes
-that happened in the past.
-</p>
-
-<div class="note">
-📌 Make timelines and remember important causes and consequences.
-</div>
-`,
-
-"Geography": `
-<h3>Geography</h3>
-
-<p>
-Geography studies the Earth, its physical features, resources,
-climate and relationship between people and their environment.
-</p>
-`,
-
-"Civics": `
-<h3>Civics</h3>
-
-<p>
-Civics helps us understand government, democracy, rights,
-responsibilities and institutions.
-</p>
-`
-
-}
-
-},
-
-
-"9": {
-
-"Mathematics": {
-
-"Number Systems": `
-<h3>Number Systems</h3>
-
-<p>
-The real number system includes rational and irrational numbers.
-</p>
-
-<div class="note">
-📌 Rational numbers can be expressed as p/q.
-Irrational numbers cannot be expressed in this form.
-</div>
-`,
-
-"Polynomials": `
-<h3>Polynomials</h3>
-
-<p>
-A polynomial is an algebraic expression containing variables
-with non-negative integer powers.
-</p>
-
-<p>
-Example:
-<strong>2x² + 3x + 1</strong>
-</p>
-
-<p>
-Its degree is 2.
-</p>
-`,
-
-"Coordinate Geometry": `
-<h3>Coordinate Geometry</h3>
-
-<p>
-A Cartesian plane has an x-axis and y-axis.
-A point is represented using an ordered pair (x,y).
-</p>
-
-<div class="note">
-📌 The first coordinate represents x and the second represents y.
-</div>
-`
-
-},
-
-"Science": {
-
-"Matter": `
-<h3>Matter</h3>
-
-<p>
-Matter is anything that has mass and occupies space.
-Matter commonly exists as solids, liquids and gases.
-</p>
-
-<div class="note">
-🔬 Particle arrangement and movement help explain the properties
-of different states of matter.
-</div>
-`,
-
-"Atoms and Molecules": `
-<h3>Atoms and Molecules</h3>
-
-<p>
-An atom is the smallest unit of an element that takes part in
-chemical reactions. Molecules are made of atoms chemically bonded together.
-</p>
-`,
-
-"Motion": `
-<h3>Motion</h3>
-
-<p>
-Motion describes a change in position with time.
-Important quantities include distance, displacement, speed,
-velocity and acceleration.
-</p>
-
-<div class="note">
-📌 Speed = Distance ÷ Time
-</div>
-`
-
-},
-
-"English": {
-
-"Grammar": `
-<h3>English Grammar</h3>
-
-<p>
-Revise tenses, modals, reported speech, clauses,
-subject-verb agreement and editing.
-</p>
-`,
-
-"Writing Skills": `
-<h3>Writing Skills</h3>
-
-<p>
-Organise your answer into a clear introduction, main points
-and conclusion. Use appropriate formal language when required.
-</p>
-`
-
-},
-
-"Social Science": {
-
-"History": `
-<h3>History</h3>
-
-<p>
-Study historical events using chronology, causes,
-consequences and different perspectives.
-</p>
-`,
-
-"Geography": `
-<h3>Geography</h3>
-
-<p>
-Revise physical features, climate, drainage, natural vegetation,
-wildlife and population.
-</p>
-`,
-
-"Democratic Politics": `
-<h3>Democratic Politics</h3>
-
-<p>
-Democracy involves participation, institutions, rights,
-representation and accountability.
-</p>
-`
-
-}
-
-},
-
-
-"10": {
-
-"Mathematics": {
-
-"Real Numbers": `
-<h3>Real Numbers</h3>
-
-<p>
-Real numbers include rational and irrational numbers.
-Prime factorisation and Euclid's division algorithm are
-important tools in this topic.
-</p>
-
-<div class="note">
-📌 Practise HCF and LCM problems carefully and show every step.
-</div>
-`,
-
-"Polynomials": `
-<h3>Polynomials</h3>
-
-<p>
-Learn zeroes of polynomials and the relationship between
-zeroes and coefficients.
-</p>
-
-<div class="note">
-📌 For a quadratic polynomial, the graph can help identify its zeroes.
-</div>
-`,
-
-"Pair of Linear Equations": `
-<h3>Pair of Linear Equations</h3>
-
-<p>
-A pair of linear equations can have one solution,
-no solution or infinitely many solutions.
-</p>
-
-<p>
-Methods include graphical, substitution and elimination methods.
-</p>
-`
-
-},
-
-"Science": {
-
-"Chemical Reactions": `
-<h3>Chemical Reactions</h3>
-
-<p>
-A chemical reaction forms one or more new substances.
-Signs may include change in colour, temperature,
-gas formation or formation of a precipitate.
-</p>
-
-<div class="note">
-⚗️ Chemical equations should be balanced to follow
-the law of conservation of mass.
-</div>
-`,
-
-"Acids Bases and Salts": `
-<h3>Acids, Bases and Salts</h3>
-
-<p>
-Acids and bases have different properties and can be identified
-using indicators.
-</p>
-
-<p>
-The pH scale is used to describe how acidic or basic a solution is.
-</p>
-`,
-
-"Light": `
-<h3>Light</h3>
-
-<p>
-Light can be reflected and refracted.
-Ray diagrams are important for understanding mirrors and lenses.
-</p>
-
-<div class="note">
-💡 Practise drawing neat labelled ray diagrams.
-</div>
-`
-
-},
-
-"English": {
-
-"Reading": `
-<h3>Reading Skills</h3>
-
-<p>
-Read passages carefully and identify the main idea,
-supporting details, inference and evidence.
-</p>
-`,
-
-"Grammar": `
-<h3>Grammar</h3>
-
-<p>
-Important areas include tenses, modals, reported speech,
-subject-verb agreement, editing and sentence transformation.
-</p>
-`,
-
-"Writing": `
-<h3>Writing Skills</h3>
-
-<p>
-Plan your response before writing. Keep your ideas organised,
-relevant and grammatically accurate.
-</p>
-`
-
-},
-
-"Social Science": {
-
-"History": `
-<h3>History</h3>
-
-<p>
-Study historical developments through chronology,
-causes, consequences and evidence.
-</p>
-`,
-
-"Geography": `
-<h3>Geography</h3>
-
-<p>
-Important areas include resources, agriculture,
-manufacturing, transport and sustainable development.
-</p>
-`,
-
-"Civics": `
-<h3>Civics</h3>
-
-<p>
-Study power sharing, federalism, political institutions,
-democracy and democratic outcomes.
-</p>
-`
-
-}
-
-}
-
-};
-
-
-/* =========================
-   TEST QUESTIONS
-========================= */
-
-const tests={
-
-"8|Mathematics":[
-
-{
-q:"What is 3/4 + 1/4?",
-o:["1","1/2","3/8","2"],
-a:0
-},
-
-{
-q:"Which of these is a rational number?",
-o:["√2","π","5/7","√3"],
-a:2
-},
-
-{
-q:"If x + 5 = 12, what is x?",
-o:["5","7","12","17"],
-a:1
-},
-
-{
-q:"What is the square of 9?",
-o:["18","27","81","99"],
-a:2
-},
-
-{
-q:"Which number cannot be a denominator?",
-o:["1","2","-5","0"],
-a:3
-}
-
-],
-
-"8|Science":[
-
-{
-q:"Which of these is a microorganism?",
-o:["Mango","Bacteria","Tiger","Rose"],
-a:1
-},
-
-{
-q:"Pressure depends on force and:",
-o:["Area","Colour","Sound","Taste"],
-a:0
-},
-
-{
-q:"Which stage comes after sowing?",
-o:["Irrigation","Harvesting","Storage","Ploughing"],
-a:0
-},
-
-{
-q:"Which group contains microorganisms?",
-o:["Bacteria","Elephants","Trees","Birds"],
-a:0
-}
-
-],
-
-"9|Mathematics":[
-
-{
-q:"Which number is irrational?",
-o:["1/2","0.25","√2","4"],
-a:2
-},
-
-{
-q:"What is the degree of 7x² + 3x + 1?",
-o:["1","2","3","7"],
-a:1
-},
-
-{
-q:"The point (0,5) lies on the:",
-o:["x-axis","y-axis","origin","neither axis"],
-a:1
-},
-
-{
-q:"Which is a real number?",
-o:["√2","5","π","All of these"],
-a:3
-}
-
-],
-
-"9|Science":[
-
-{
-q:"The SI unit of speed is:",
-o:["m/s","kg","N","J"],
-a:0
-},
-
-{
-q:"Matter is made up of:",
-o:["Particles","Only water","Light","Sound"],
-a:0
-},
-
-{
-q:"Acceleration is the rate of change of:",
-o:["Mass","Velocity","Colour","Volume"],
-a:1
-},
-
-{
-q:"Which state has a fixed volume but no fixed shape?",
-o:["Solid","Liquid","Gas","None"],
-a:1
-}
-
-],
-
-"10|Mathematics":[
-
-{
-q:"What is the degree of 5x³ + 2?",
-o:["1","2","3","5"],
-a:2
-},
-
-{
-q:"Two intersecting lines have:",
-o:["No solution","One solution","Infinite solutions","No variables"],
-a:1
-},
-
-{
-q:"√49 equals:",
-o:["6","7","8","9"],
-a:1
-},
-
-{
-q:"Which number is irrational?",
-o:["4","9","√2","16"],
-a:2
-}
-
-],
-
-"10|Science":[
-
-{
-q:"A balanced chemical equation follows conservation of:",
-o:["Mass","Colour","Temperature","Sound"],
-a:0
-},
-
-{
-q:"A solution with pH less than 7 is generally:",
-o:["Acidic","Basic","Neutral","Metallic"],
-a:0
-},
-
-{
-q:"Change in direction of light between media is called:",
-o:["Reflection","Refraction","Evaporation","Magnetism"],
-a:1
-},
-
-{
-q:"Which is a sign of some chemical reactions?",
-o:["Gas formation","Only silence","No change","Nothing"],
-a:0
-}
-
-]
-
-};
-
-
-/* =========================
-   VARIABLES
-========================= */
-
-let currentClass="";
-let currentSubject="";
-let currentQuestions=[];
-
-
-/* =========================
-   DARK MODE
-========================= */
-
-function toggleDark(){
-
-document.body.classList.toggle("dark");
-
-}
-
-
-/* =========================
-   SHOW CLASS
-========================= */
-
-function showClass(classNumber){
-
-currentClass=classNumber;
-
-let html=`
-
-<button class="button secondary back"
-onclick="goHome()">
-← Back
-</button>
-
-<h2 class="section-title">
-Class ${classNumber}
-</h2>
-
-<div class="grid">
-`;
-
-const subjects=Object.keys(studyData[classNumber]);
-
-subjects.forEach(subject=>{
-
-let icon="📚";
-
-if(subject==="Mathematics") icon="📐";
-if(subject==="Science") icon="🔬";
-if(subject==="English") icon="📖";
-if(subject==="Social Science") icon="🌍";
-
-html+=`
-
-<div class="card"
-onclick="showSubject('${classNumber}','${subject}')">
-
-<div class="icon">${icon}</div>
-
-<h3>${subject}</h3>
-
-<p>
-Open chapters, notes and tests.
-</p>
-
-</div>
-
-`;
-
-});
-
-
-html+=`
-
-<div class="card"
-onclick="showTests('${classNumber}')">
-
-<div class="icon">📝</div>
-
-<h3>Tests</h3>
-
-<p>
-Take a test and get your result instantly.
-</p>
-
-</div>
-
-</div>
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   SHOW SUBJECT
-========================= */
-
-function showSubject(classNumber,subject){
-
-currentClass=classNumber;
-currentSubject=subject;
-
-let chapters=Object.keys(
-studyData[classNumber][subject]
-);
-
-let html=`
-
-<button class="button secondary back"
-onclick="showClass('${classNumber}')">
-← Back
-</button>
-
-<h2 class="section-title">
-${subject} — Class ${classNumber}
-</h2>
-
-<div class="grid">
-`;
-
-chapters.forEach(chapter=>{
-
-html+=`
-
-<div class="card"
-onclick="showChapter('${classNumber}','${subject}','${chapter}')">
-
-<div class="icon">📘</div>
-
-<h3>${chapter}</h3>
-
-<p>
-Open chapter notes →
-</p>
-
-</div>
-
-`;
-
-});
-
-
-html+=`
-
-</div>
-
-<div class="panel" style="margin-top:25px">
-
-<h3>📝 Test Yourself</h3>
-
-<p>
-Check what you have learned from this subject.
-</p>
-
-<button class="button primary"
-onclick="startTest('${classNumber}','${subject}')">
-
-Start Test →
-
-</button>
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   SHOW CHAPTER
-========================= */
-
-function showChapter(classNumber,subject,chapter){
-
-let notes=
-studyData[classNumber][subject][chapter];
-
-let html=`
-
-<button class="button secondary back"
-onclick="showSubject('${classNumber}','${subject}')">
-
-← Back
-
-</button>
-
-<div class="panel">
-
-<span class="badge">
-Class ${classNumber} • ${subject}
-</span>
-
-<h2 style="margin:20px 0">
-${chapter}
-</h2>
-
-<div class="note">
-
-<strong>📖 Chapter Notes</strong>
-
-<br><br>
-
-${notes}
-
-</div>
-
-<hr style="margin:25px 0">
-
-<h3>🎯 Study Tip</h3>
-
-<p style="margin-top:10px;line-height:1.7">
-
-Read the notes carefully, write important points
-in your notebook and then take the test to check
-your understanding.
-
-</p>
-
-<button class="button primary"
-onclick="startTest('${classNumber}','${subject}')">
-
-📝 Take Test
-
-</button>
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   TEST MENU
-========================= */
-
-function showTests(classNumber){
-
-classNumber=
-classNumber ||
-currentClass ||
-"8";
-
-currentClass=classNumber;
-
-let html=`
-
-<button class="button secondary back"
-onclick="goHome()">
-
-← Home
-
-</button>
-
-<h2 class="section-title">
-📝 Class ${classNumber} Tests
-</h2>
-
-<p style="text-align:center;margin-bottom:25px">
-
-Choose a subject to begin your test.
-
-</p>
-
-<div class="grid">
-`;
-
-["Mathematics","Science"].forEach(subject=>{
-
-if(tests[classNumber+"|"+subject]){
-
-let total=
-tests[classNumber+"|"+subject].length;
-
-html+=`
-
-<div class="card"
-onclick="startTest('${classNumber}','${subject}')">
-
-<div class="icon">🧠</div>
-
-<h3>${subject}</h3>
-
-<p>
-${total} questions • Instant result
-</p>
-
-</div>
-
-`;
-
-}
-
-});
-
-
-html+=`
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   START TEST
-========================= */
-
-function startTest(classNumber,subject){
-
-currentClass=classNumber;
-currentSubject=subject;
-
-currentQuestions=
-tests[classNumber+"|"+subject] || [];
-
-if(currentQuestions.length===0){
-
-alert("This test is not available yet.");
-
-return;
-
-}
-
-let html=`
-
-<button class="button secondary back"
-onclick="showTests('${classNumber}')">
-
-← Tests
-
-</button>
-
-<h2 class="section-title">
-
-📝 Class ${classNumber} ${subject} Test
-
-</h2>
-
-<div class="panel">
-
-<p>
-Answer all questions carefully.
-</p>
-
-<form id="testForm">
-`;
-
-currentQuestions.forEach((question,index)=>{
-
-html+=`
-
-<div class="question">
-
-<h3>
-${index+1}. ${question.q}
-</h3>
-`;
-
-question.o.forEach((option,optionIndex)=>{
-
-html+=`
-
-<label class="option">
-
-<input
-type="radio"
-name="question${index}"
-value="${optionIndex}"
->
-
-${option}
-
-</label>
-
-`;
-
-});
-
-html+=`
-
-</div>
-
-`;
-
-});
-
-
-html+=`
-
-<button
-type="button"
-class="button primary"
-onclick="submitTest()">
-
-✅ Submit Test
-
-</button>
-
-</form>
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   SUBMIT TEST
-========================= */
-
-function submitTest(){
-
-let score=0;
-
-let unanswered=0;
-
-currentQuestions.forEach((question,index)=>{
-
-let selected=
-document.querySelector(
-`input[name="question${index}"]:checked`
-);
-
-if(!selected){
-
-unanswered++;
-
-}else if(
-Number(selected.value)===question.a
-){
-
-score++;
-
-}
-
-});
-
-let total=currentQuestions.length;
-
-let percentage=
-Math.round((score/total)*100);
-
-let message="";
-
-if(percentage>=90){
-
-message="🏆 Outstanding! Excellent preparation!";
-
-}else if(percentage>=75){
-
-message="🌟 Great job! Keep it up!";
-
-}else if(percentage>=50){
-
-message="👍 Good effort! A little more practice will help.";
-
-}else{
-
-message="💪 Keep practising. You can improve!";
-
-}
-
-
-let html=`
-
-<div class="result">
-
-<h2>
-🎉 Test Completed!
-</h2>
-
-<div class="score">
-${score}/${total}
-</div>
-
-<h2>
-${percentage}%
-</h2>
-
-<p>
-${message}
-</p>
-
-<p>
-Unanswered: ${unanswered}
-</p>
-
-<br>
-
-<button
-class="button primary"
-onclick="startTest('${currentClass}','${currentSubject}')">
-
-🔄 Try Again
-
-</button>
-
-<button
-class="button secondary"
-onclick="showTests('${currentClass}')">
-
-📝 Other Tests
-
-</button>
-
-</div>
-
-<div class="panel">
-
-<h2>
-📊 Answer Review
-</h2>
-`;
-
-currentQuestions.forEach((question,index)=>{
-
-let selected=
-document.querySelector(
-`input[name="question${index}"]:checked`
-);
-
-let correct=
-selected &&
-Number(selected.value)===question.a;
-
-html+=`
-
-<div class="note">
-
-<strong>
-Question ${index+1}:
-${correct ? "✅ Correct" : "❌ Incorrect"}
-</strong>
-
-<br>
-
-Correct answer:
-<strong>
-${question.o[question.a]}
-</strong>
-
-</div>
-
-`;
-
-});
-
-
-html+=`
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   PRACTICE
-========================= */
-
-function showPractice(){
-
-let html=`
-
-<button class="button secondary back"
-onclick="goHome()">
-
-← Home
-
-</button>
-
-<div class="panel">
-
-<h2>
-🎯 Practice Centre
-</h2>
-
-<p style="margin:15px 0;line-height:1.7">
-
-Choose your class and use the available subject
-tests for practice.
-
-</p>
-
-<button class="button primary"
-onclick="showTests('8')">
-Class 8
-</button>
-
-<button class="button primary"
-onclick="showTests('9')">
-Class 9
-</button>
-
-<button class="button primary"
-onclick="showTests('10')">
-Class 10
-</button>
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-function showAbout(){
-
-let html=`
-
-<button class="button secondary back"
-onclick="goHome()">
-
-← Home
-
-</button>
-
-<div class="panel">
-
-<h2>
-💡 About StudyHub
-</h2>
-
-<br>
-
-<p>
-StudyHub is a learning website designed for
-students of Classes 8, 9 and 10.
-</p>
-
-<br>
-
-<h3>
-How to study:
-</h3>
-
-<br>
-
-<p>
-1️⃣ Select your class.
-</p>
-
-<p>
-2️⃣ Select a subject.
-</p>
-
-<p>
-3️⃣ Open a chapter.
-</p>
-
-<p>
-4️⃣ Read the notes.
-</p>
-
-<p>
-5️⃣ Take the test.
-</p>
-
-<p>
-6️⃣ Check your score and review answers.
-</p>
-
-</div>
-
-`;
-
-showContent(html);
-
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-function searchWebsite(){
-
-let search=
-document.getElementById("searchBox")
-.value
-.toLowerCase()
-.trim();
-
-if(search===""){
-
-goHome();
-
-return;
-
-}
-
-let results=[];
-
-for(let classNumber in studyData){
-
-for(let subject in studyData[classNumber]){
-
-for(let chapter in studyData[classNumber][subject]){
-
-let text=
-(
-"class "+
-classNumber+
-" "+
-subject+
-" "+
-chapter
-).toLowerCase();
-
-if(text.includes(search)){
-
-results.push({
-
-classNumber,
-subject,
-chapter
-
-});
-
-}
-
-}
-
-}
-
-}
-
-
-let html=`
-
-<button class="button secondary back"
-onclick="goHome()">
-
-← Home
-
-</button>
-
-<h2 class="section-title">
-🔍 Search Results
-</h2>
-
-`;
-
-if(results.length===0){
-
-html+=`
-
-<div class="panel">
-
-<h3>
-No results found.
-</h3>
-
-<p style="margin-top:10px">
-Try searching for Mathematics, Science,
-English, History or a chapter name.
-</p>
-
-</div>
-
-`;
-
-}else{
-
-html+=`
-
-<div class="grid">
-`;
-
-results.forEach(result=>{
-
-html+=`
-
-<div class="card"
-onclick="showChapter(
-'${result.classNumber}',
-'${result.subject}',
-'${result.chapter}'
-)">
-
-<span class="badge">
-
-Class ${result.classNumber}
-•
-${result.subject}
-
-</span>
-
-<h3 style="margin-top:12px">
-
-${result.chapter}
-
-</h3>
-
-<p>
-Open chapter notes →
-</p>
-
-</div>
-
-`;
-
-});
-
-html+=`
-
-</div>
-
-`;
-
-}
-
-showContent(html);
-
-}
-
-
-/* =========================
-   CONTENT DISPLAY
-========================= */
-
-function showContent(html){
-
-document
-.getElementById("home")
-.classList.add("hidden");
-
-let content=
-document.getElementById("content");
-
-content.classList.remove("hidden");
-
-content.innerHTML=html;
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-function goHome(){
-
-document
-.getElementById("home")
-.classList.remove("hidden");
-
-document
-.getElementById("content")
-.classList.add("hidden");
-
-document
-.getElementById("searchBox")
-.value="";
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-</script>
-<!-- =========================================================
-     STUDY CONTENT — CLASSES 8 TO 10
-     ========================================================= -->
-
-<section id="studyContent" class="study-content">
-
-  <div class="section-title">
-    <h2>📚 Study Material</h2>
-    <p>Choose your class and subject to start learning.</p>
-  </div>
-
-  <!-- CLASS SELECTOR -->
-  <div class="class-buttons">
-    <button onclick="showClass(8)">Class 8</button>
-    <button onclick="showClass(9)">Class 9</button>
-    <button onclick="showClass(10)">Class 10</button>
-  </div>
-
-  <!-- ================= CLASS 8 ================= -->
-  <div id="class8" class="class-content">
-
-    <h2>🎓 Class 8</h2>
-    <p class="subtitle">Complete revision material for Class 8 students.</p>
-
-    <div class="subject-grid">
-
-      <div class="study-card">
-        <div class="card-icon">📐</div>
-        <h3>Mathematics</h3>
-        <p>Numbers, algebra, geometry and data handling.</p>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>1. Rational Numbers</h4>
-          <p>
-            Rational numbers are numbers that can be written in the form
-            p/q, where q is not zero.
-          </p>
-          <p><b>Examples:</b> 1/2, -3/4, 5, 0.25</p>
-
-          <h4>2. Linear Equations</h4>
-          <p>
-            A linear equation contains a variable with power 1.
-          </p>
-          <p><b>Example:</b> x + 5 = 12</p>
-          <p>Therefore, x = 7.</p>
-
-          <h4>3. Squares and Square Roots</h4>
-          <p>
-            The square of a number is obtained by multiplying it by itself.
-          </p>
-          <p><b>Example:</b> 12² = 144</p>
-
-          <h4>4. Cubes and Cube Roots</h4>
-          <p>
-            The cube of a number is the number multiplied by itself three times.
-          </p>
-          <p><b>Example:</b> 5³ = 125</p>
-
-          <h4>5. Comparing Quantities</h4>
-          <p>
-            Important concepts include percentage, profit, loss,
-            discount and simple interest.
-          </p>
-
-          <h4>6. Algebraic Expressions</h4>
-          <p>
-            Algebraic expressions contain numbers, variables and mathematical
-            operations.
-          </p>
-
-          <h4>7. Geometry</h4>
-          <p>
-            Important topics include quadrilaterals, polygons,
-            angles and practical geometry.
-          </p>
-        </details>
+  <section id="home">
+
+    <h2 class="section-title">
+      🎓 Choose Your Class
+    </h2>
+
+    <div class="grid">
+
+      <div class="card" onclick="showClass('8')">
+        <div class="icon">🎒</div>
+        <h3>Class 8</h3>
+        <p>
+          Notes, DPP, tests and video solutions.
+        </p>
       </div>
 
-      <div class="study-card">
-        <div class="card-icon">🔬</div>
-        <h3>Science</h3>
-        <p>Physics, Chemistry and Biology fundamentals.</p>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>1. Crop Production</h4>
-          <p>
-            Agricultural practices include preparation of soil,
-            sowing, irrigation, harvesting and storage.
-          </p>
-
-          <h4>2. Microorganisms</h4>
-          <p>
-            Microorganisms are very small living organisms.
-            Some are useful while others can cause diseases.
-          </p>
-
-          <h4>3. Force and Pressure</h4>
-          <p>
-            Force is a push or pull. Pressure is force acting
-            on a unit area.
-          </p>
-
-          <h4>4. Friction</h4>
-          <p>
-            Friction is a force that opposes motion between two
-            surfaces in contact.
-          </p>
-
-          <h4>5. Sound</h4>
-          <p>
-            Sound is produced by vibrating objects and travels
-            through a medium.
-          </p>
-
-          <h4>6. Light</h4>
-          <p>
-            Light travels in straight lines and can be reflected
-            from surfaces.
-          </p>
-
-          <h4>7. Human Reproduction</h4>
-          <p>
-            Reproduction is the biological process through which
-            living organisms produce new individuals.
-          </p>
-        </details>
+      <div class="card" onclick="showClass('9')">
+        <div class="icon">📘</div>
+        <h3>Class 9</h3>
+        <p>
+          Notes, DPP, tests and video solutions.
+        </p>
       </div>
 
-      <div class="study-card">
-        <div class="card-icon">🌍</div>
-        <h3>Social Science</h3>
-        <p>History, Geography and Civics.</p>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>History</h4>
-          <p>
-            Study important developments in medieval and modern
-            Indian history, including major rulers, societies
-            and colonial developments.
-          </p>
-
-          <h4>Geography</h4>
-          <p>
-            Learn about resources, agriculture, industries,
-            human resources and different geographical regions.
-          </p>
-
-          <h4>Civics</h4>
-          <p>
-            Understand the Constitution, Parliament, judiciary,
-            law and social justice.
-          </p>
-        </details>
+      <div class="card" onclick="showClass('10')">
+        <div class="icon">🎯</div>
+        <h3>Class 10</h3>
+        <p>
+          Notes, DPP, tests and video solutions.
+        </p>
       </div>
-
-      <div class="study-card">
-        <div class="card-icon">📖</div>
-        <h3>English</h3>
-        <p>Grammar, literature and vocabulary.</p>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Grammar</h4>
-          <p>
-            Nouns, pronouns, adjectives, verbs, tenses,
-            prepositions, conjunctions and sentence structure.
-          </p>
-
-          <h4>Writing</h4>
-          <p>
-            Practice letters, notices, paragraphs,
-            diary entries and story writing.
-          </p>
-
-          <h4>Vocabulary</h4>
-          <p>
-            Improve vocabulary through synonyms, antonyms,
-            meanings and contextual usage.
-          </p>
-        </details>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ================= CLASS 9 ================= -->
-  <div id="class9" class="class-content hidden">
-
-    <h2>🎓 Class 9</h2>
-    <p class="subtitle">Build strong concepts for Class 9.</p>
-
-    <div class="subject-grid">
-
-      <div class="study-card">
-        <div class="card-icon">📐</div>
-        <h3>Mathematics</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Number Systems</h4>
-          <p>
-            Learn rational and irrational numbers and their
-            representation on the number line.
-          </p>
-
-          <h4>Polynomials</h4>
-          <p>
-            A polynomial is an algebraic expression consisting
-            of variables and coefficients.
-          </p>
-
-          <h4>Coordinate Geometry</h4>
-          <p>
-            Learn about Cartesian coordinates, axes,
-            quadrants and plotting points.
-          </p>
-
-          <h4>Linear Equations</h4>
-          <p>
-            Understand equations in two variables and their
-            graphical representation.
-          </p>
-
-          <h4>Geometry</h4>
-          <p>
-            Important concepts include lines and angles,
-            triangles, quadrilaterals and circles.
-          </p>
-
-          <h4>Statistics</h4>
-          <p>
-            Learn collection, presentation and interpretation
-            of data.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">⚗️</div>
-        <h3>Science</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Matter</h4>
-          <p>
-            Matter exists mainly as solids, liquids and gases.
-            Particles of matter are continuously moving.
-          </p>
-
-          <h4>Atoms and Molecules</h4>
-          <p>
-            Learn atomic structure, molecules and chemical formulae.
-          </p>
-
-          <h4>Motion</h4>
-          <p>
-            Motion describes a change in position with time.
-            Important quantities include distance, displacement,
-            speed and velocity.
-          </p>
-
-          <h4>Force and Laws of Motion</h4>
-          <p>
-            Newton's laws explain how forces affect the motion
-            of objects.
-          </p>
-
-          <h4>Gravitation</h4>
-          <p>
-            Every object attracts every other object due to
-            gravitational force.
-          </p>
-
-          <h4>Cell</h4>
-          <p>
-            The cell is the basic structural and functional unit
-            of living organisms.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">🌎</div>
-        <h3>Social Science</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>History</h4>
-          <p>
-            Study major historical events, revolutions,
-            colonialism and their effects on society.
-          </p>
-
-          <h4>Geography</h4>
-          <p>
-            Learn about India’s physical features, climate,
-            drainage, vegetation and population.
-          </p>
-
-          <h4>Political Science</h4>
-          <p>
-            Understand democracy, constitutional design,
-            elections and democratic institutions.
-          </p>
-
-          <h4>Economics</h4>
-          <p>
-            Learn about production, people as resources,
-            poverty and food security.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">📚</div>
-        <h3>English</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Grammar</h4>
-          <p>
-            Tenses, modals, subject-verb agreement,
-            reported speech and sentence transformation.
-          </p>
-
-          <h4>Writing</h4>
-          <p>
-            Practice descriptive paragraphs, stories,
-            letters and formal writing.
-          </p>
-
-          <h4>Literature</h4>
-          <p>
-            Focus on understanding themes, characters,
-            events, vocabulary and literary devices.
-          </p>
-        </details>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ================= CLASS 10 ================= -->
-  <div id="class10" class="class-content hidden">
-
-    <h2>🎓 Class 10</h2>
-    <p class="subtitle">
-      Complete revision support for board-level preparation.
-    </p>
-
-    <div class="subject-grid">
-
-      <div class="study-card">
-        <div class="card-icon">📐</div>
-        <h3>Mathematics</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Real Numbers</h4>
-          <p>
-            Study Euclid's division algorithm, fundamental theorem
-            of arithmetic and decimal expansions.
-          </p>
-
-          <h4>Polynomials</h4>
-          <p>
-            Learn zeros of polynomials and the relationship between
-            zeros and coefficients.
-          </p>
-
-          <h4>Pair of Linear Equations</h4>
-          <p>
-            Solve simultaneous equations using graphical,
-            substitution and elimination methods.
-          </p>
-
-          <h4>Quadratic Equations</h4>
-          <p>
-            Learn factorisation, quadratic formula and nature
-            of roots.
-          </p>
-
-          <h4>Arithmetic Progressions</h4>
-          <p>
-            Study common difference and the nth term of an
-            arithmetic progression.
-          </p>
-
-          <h4>Triangles</h4>
-          <p>
-            Learn similarity, congruence and important theorems
-            related to triangles.
-          </p>
-
-          <h4>Trigonometry</h4>
-          <p>
-            Learn trigonometric ratios, identities and
-            applications.
-          </p>
-
-          <h4>Statistics and Probability</h4>
-          <p>
-            Practice mean, median, mode and basic probability.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">🔬</div>
-        <h3>Science</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Chemical Reactions</h4>
-          <p>
-            Learn combination, decomposition, displacement,
-            double displacement and oxidation-reduction reactions.
-          </p>
-
-          <h4>Acids, Bases and Salts</h4>
-          <p>
-            Understand indicators, pH, neutralisation and
-            common salts.
-          </p>
-
-          <h4>Metals and Non-metals</h4>
-          <p>
-            Compare their physical and chemical properties.
-          </p>
-
-          <h4>Carbon Compounds</h4>
-          <p>
-            Learn covalent bonding, hydrocarbons, functional groups
-            and important carbon compounds.
-          </p>
-
-          <h4>Life Processes</h4>
-          <p>
-            Study nutrition, respiration, transportation and
-            excretion in living organisms.
-          </p>
-
-          <h4>Control and Coordination</h4>
-          <p>
-            Learn nervous and hormonal coordination in organisms.
-          </p>
-
-          <h4>Electricity</h4>
-          <p>
-            Important concepts include current, potential difference,
-            resistance, Ohm's law and electrical power.
-          </p>
-
-          <h4>Light</h4>
-          <p>
-            Study reflection, refraction, mirrors and lenses.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">🌍</div>
-        <h3>Social Science</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>History</h4>
-          <p>
-            Learn about nationalism, industrialisation,
-            globalisation and important historical movements.
-          </p>
-
-          <h4>Geography</h4>
-          <p>
-            Study resources, agriculture, manufacturing,
-            lifelines of the economy and map-based topics.
-          </p>
-
-          <h4>Political Science</h4>
-          <p>
-            Learn power sharing, federalism, gender and religion,
-            political parties and democracy.
-          </p>
-
-          <h4>Economics</h4>
-          <p>
-            Study development, sectors of the economy,
-            money and credit, globalisation and consumer rights.
-          </p>
-        </details>
-      </div>
-
-      <div class="study-card">
-        <div class="card-icon">📖</div>
-        <h3>English</h3>
-
-        <details>
-          <summary>View Topics</summary>
-
-          <h4>Reading</h4>
-          <p>
-            Practice comprehension, inference, vocabulary
-            and interpretation.
-          </p>
-
-          <h4>Grammar</h4>
-          <p>
-            Revise tenses, modals, subject-verb agreement,
-            reported speech and determiners.
-          </p>
-
-          <h4>Writing</h4>
-          <p>
-            Practice formal letters, analytical paragraphs
-            and other examination-oriented formats.
-          </p>
-
-          <h4>Literature</h4>
-          <p>
-            Focus on themes, characters, important events,
-            poetic devices and interpretation.
-          </p>
-        </details>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- =========================================================
-       TEST SECTION
-       ========================================================= -->
-
-  <section id="testSection" class="test-section">
-
-    <div class="section-title">
-      <h2>📝 Test Yourself</h2>
-      <p>
-        Complete a test and instantly see your score and result.
-      </p>
-    </div>
-
-    <div class="test-selector">
-
-      <button onclick="startTest('math')">
-        📐 Mathematics Test
-      </button>
-
-      <button onclick="startTest('science')">
-        🔬 Science Test
-      </button>
-
-      <button onclick="startTest('sst')">
-        🌍 Social Science Test
-      </button>
-
-      <button onclick="startTest('english')">
-        📖 English Test
-      </button>
-
-    </div>
-
-    <div id="testArea" class="test-area hidden">
-
-      <div class="test-header">
-        <h2 id="testTitle">Test</h2>
-        <p id="questionNumber"></p>
-      </div>
-
-      <div id="questionBox"></div>
-
-      <button
-        id="nextQuestionBtn"
-        class="next-question"
-        onclick="nextQuestion()">
-        Next Question →
-      </button>
-
-    </div>
-
-    <!-- RESULT -->
-    <div id="resultBox" class="result-box hidden">
-
-      <div class="result-icon">🏆</div>
-
-      <h2>Test Completed!</h2>
-
-      <p>Your Result</p>
-
-      <div class="score-display">
-        <span id="finalScore">0</span>
-        <span>/</span>
-        <span id="totalQuestions">0</span>
-      </div>
-
-      <h3 id="resultMessage"></h3>
-
-      <button onclick="restartTest()">
-        🔄 Try Again
-      </button>
-
-      <button onclick="closeTest()">
-        🏠 Back to StudyHub
-      </button>
 
     </div>
 
   </section>
 
-</section>
+  <section
+    id="content"
+    class="hidden"
+    style="margin-top:30px;"
+  ></section>
 
+</main>
 
-<!-- =========================================================
-     CLASS SWITCHING
-     ========================================================= -->
+<footer>
 
-<script>
+  <h3>📚 LearnSphere</h3>
 
-function showClass(classNumber) {
+  <p>
+    Learn • Practice • Test • Improve 🚀
+  </p>
 
-  document.querySelectorAll(".class-content")
-    .forEach(function(section) {
-      section.classList.add("hidden");
-    });
+  <p>
+    © 2026 LearnSphere
+  </p>
 
-  const selectedClass =
-    document.getElementById("class" + classNumber);
+</footer>
+  <script>
 
-  if (selectedClass) {
-    selectedClass.classList.remove("hidden");
+/* ================================
+   LEARNSPHERE CORE FUNCTIONS
+================================ */
 
-    selectedClass.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
+function toggleDark() {
+  document.body.classList.toggle("dark");
 }
 
-
-/* =========================================================
-   TEST DATABASE
-   ========================================================= */
-
-const testQuestions = {
-
-  math: [
-
-    {
-      question: "What is the value of 12 × 8?",
-      options: ["86", "96", "108", "88"],
-      answer: 1
-    },
-
-    {
-      question: "What is the square of 15?",
-      options: ["125", "200", "225", "250"],
-      answer: 2
-    },
-
-    {
-      question: "If x + 7 = 15, what is x?",
-      options: ["6", "7", "8", "9"],
-      answer: 2
-    },
-
-    {
-      question: "What is 25% of 200?",
-      options: ["25", "40", "50", "75"],
-      answer: 2
-    },
-
-    {
-      question: "What is the value of 5²?",
-      options: ["10", "15", "20", "25"],
-      answer: 3
-    }
-
-  ],
-
-
-  science: [
-
-    {
-      question: "Which organ pumps blood throughout the body?",
-      options: ["Lungs", "Heart", "Kidney", "Brain"],
-      answer: 1
-    },
-
-    {
-      question: "What force pulls objects towards Earth?",
-      options: ["Friction", "Magnetic force", "Gravity", "Pressure"],
-      answer: 2
-    },
-
-    {
-      question: "Which gas is essential for respiration?",
-      options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
-      answer: 0
-    },
-
-    {
-      question: "What is the basic unit of life?",
-      options: ["Tissue", "Organ", "Cell", "System"],
-      answer: 2
-    },
-
-    {
-      question: "Which state of matter has a fixed shape?",
-      options: ["Solid", "Liquid", "Gas", "None"],
-      answer: 0
-    }
-
-  ],
-
-
-  sst: [
-
-    {
-      question: "What is democracy?",
-      options: [
-        "Rule by one person",
-        "Rule by the people",
-        "Rule by the army",
-        "Rule by a king"
-      ],
-      answer: 1
-    },
-
-    {
-      question: "Which is the largest continent?",
-      options: ["Africa", "Europe", "Asia", "Australia"],
-      answer: 2
-    },
-
-    {
-      question: "Which institution makes laws in India?",
-      options: [
-        "Parliament",
-        "Police",
-        "Army",
-        "Election Commission"
-      ],
-      answer: 0
-    },
-
-    {
-      question: "Which sector includes farming?",
-      options: [
-        "Primary sector",
-        "Secondary sector",
-        "Tertiary sector",
-        "IT sector"
-      ],
-      answer: 0
-    },
-
-    {
-      question: "Which document is the supreme law of India?",
-      options: [
-        "Parliament Act",
-        "Constitution",
-        "Newspaper",
-        "Court order"
-      ],
-      answer: 1
-    }
-
-  ],
-
-
-  english: [
-
-    {
-      question: "Which word is a noun?",
-      options: ["Quickly", "Beautiful", "School", "Run"],
-      answer: 2
-    },
-
-    {
-      question: "What is the past tense of 'go'?",
-      options: ["Goed", "Gone", "Went", "Going"],
-      answer: 2
-    },
-
-    {
-      question: "Which is a synonym of 'happy'?",
-      options: ["Sad", "Joyful", "Angry", "Tired"],
-      answer: 1
-    },
-
-    {
-      question: "Which word is an adjective?",
-      options: ["Beautiful", "Run", "Quickly", "School"],
-      answer: 0
-    },
-
-    {
-      question: "Choose the correct sentence.",
-      options: [
-        "He go to school.",
-        "He going school.",
-        "He goes to school.",
-        "He gone school."
-      ],
-      answer: 2
-    }
-
-  ]
-
-};
-
-
-/* =========================================================
-   TEST VARIABLES
-   ========================================================= */
-
-let currentTest = [];
-let currentQuestion = 0;
-let score = 0;
-let selectedSubject = "";
-
-
-/* =========================================================
-   START TEST
-   ========================================================= */
-
-function startTest(subject) {
-
-  selectedSubject = subject;
-
-  currentTest = testQuestions[subject];
-
-  currentQuestion = 0;
-
-  score = 0;
-
-  document.getElementById("testArea")
-    .classList.remove("hidden");
-
-  document.getElementById("resultBox")
-    .classList.add("hidden");
-
-  let titles = {
-    math: "📐 Mathematics Test",
-    science: "🔬 Science Test",
-    sst: "🌍 Social Science Test",
-    english: "📖 English Test"
-  };
-
-  document.getElementById("testTitle").textContent =
-    titles[subject];
-
-  showQuestion();
-
-  document.getElementById("testArea")
-    .scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+function showHome() {
+  document.getElementById("home").classList.remove("hidden");
+  document.getElementById("content").classList.add("hidden");
 }
 
+function showClass(className) {
 
-/* =========================================================
-   SHOW QUESTION
-   ========================================================= */
+  document.getElementById("home").classList.add("hidden");
 
-function showQuestion() {
+  const content = document.getElementById("content");
 
-  const question =
-    currentTest[currentQuestion];
+  content.classList.remove("hidden");
 
-  document.getElementById("questionNumber").textContent =
-    "Question " +
-    (currentQuestion + 1) +
-    " of " +
-    currentTest.length;
+  const subjects = studyData[className];
 
-  let html = "";
+  let html = `
+    <div class="panel">
 
-  html += "<h3>" + question.question + "</h3>";
+      <button class="button secondary"
+        onclick="showHome()">
+        ← Back
+      </button>
 
-  html += '<div class="options">';
+      <h2 class="section-title">
+        🎓 Class ${className}
+      </h2>
 
-  question.options.forEach(function(option, index) {
+      <p style="text-align:center;margin-bottom:25px;">
+        Choose a subject
+      </p>
+
+      <div class="grid">
+  `;
+
+  Object.keys(subjects).forEach(subject => {
 
     html += `
-      <button
-        class="option-button"
-        onclick="selectAnswer(${index})">
-        ${option}
-      </button>
+      <div class="card"
+        onclick="showSubject('${className}',
+        '${escapeQuotes(subject)}')">
+
+        <div class="icon">
+          ${getSubjectIcon(subject)}
+        </div>
+
+        <h3>${subject}</h3>
+
+        <p>
+          Notes • DPP • Test • Video Solutions
+        </p>
+
+      </div>
     `;
 
   });
 
-  html += "</div>";
+  html += `
+      </div>
+    </div>
+  `;
 
-  document.getElementById("questionBox").innerHTML = html;
-
-  document.getElementById("nextQuestionBtn")
-    .style.display = "none";
+  content.innerHTML = html;
 }
 
+function showSubject(className, subject) {
 
-/* =========================================================
-   SELECT ANSWER
-   ========================================================= */
+  const content = document.getElementById("content");
 
-function selectAnswer(selected) {
+  const chapters = studyData[className][subject];
 
-  const question =
-    currentTest[currentQuestion];
+  let html = `
+    <div class="panel">
 
-  const buttons =
-    document.querySelectorAll(".option-button");
+      <button class="button secondary"
+        onclick="showClass('${className}')">
+        ← Back
+      </button>
 
-  buttons.forEach(function(button) {
-    button.disabled = true;
+      <h2 class="section-title">
+        ${getSubjectIcon(subject)}
+        ${subject}
+      </h2>
+
+      <div class="grid">
+  `;
+
+  Object.keys(chapters).forEach(chapter => {
+
+    html += `
+      <div class="card"
+        onclick="openChapter(
+          '${className}',
+          '${escapeQuotes(subject)}',
+          '${escapeQuotes(chapter)}'
+        )">
+
+        <div class="icon">📚</div>
+
+        <h3>${chapter}</h3>
+
+        <p>
+          📖 Notes<br>
+          📝 DPP<br>
+          🧪 Test<br>
+          🎥 Video Solution
+        </p>
+
+      </div>
+    `;
+
   });
 
-  if (selected === question.answer) {
+  html += `
+      </div>
+    </div>
+  `;
 
-    score++;
-
-    buttons[selected].classList.add("correct");
-
-  } else {
-
-    buttons[selected].classList.add("wrong");
-
-    buttons[question.answer].classList.add("correct");
-
-  }
-
-  document.getElementById("nextQuestionBtn")
-    .style.display = "block";
+  content.innerHTML = html;
 }
 
+function openChapter(className, subject, chapter) {
 
-/* =========================================================
-   NEXT QUESTION
-   ========================================================= */
+  const content =
+    document.getElementById("content");
 
-function nextQuestion() {
+  const data =
+    studyData[className][subject][chapter];
 
-  currentQuestion++;
+  const questions =
+    getQuestions(className, subject, chapter);
 
-  if (currentQuestion < currentTest.length) {
+  let html = `
+    <div class="panel">
 
-    showQuestion();
+      <button class="button secondary"
+        onclick="showSubject(
+          '${className}',
+          '${escapeQuotes(subject)}'
+        )">
+        ← Back
+      </button>
 
-  } else {
+      <h2 style="margin:20px 0;">
+        📚 ${chapter}
+      </h2>
 
-    showResult();
+      <span class="badge">
+        Class ${className} • ${subject}
+      </span>
 
-  }
-}
+      <hr style="margin:25px 0;">
 
+      <!-- NOTES -->
 
-/* =========================================================
-   SHOW RESULT
-   ========================================================= */
+      <h2>📖 Complete Notes</h2>
 
-function showResult() {
-
-  document.getElementById("testArea")
-    .classList.add("hidden");
-
-  document.getElementById("resultBox")
-    .classList.remove("hidden");
-
-  document.getElementById("finalScore")
-    .textContent = score;
-
-  document.getElementById("totalQuestions")
-    .textContent = currentTest.length;
-
-  let percentage =
-    (score / currentTest.length) * 100;
-
-  let message = "";
-
-  if (percentage === 100) {
-
-    message = "🌟 Excellent! Perfect score!";
-
-  } else if (percentage >= 80) {
-
-    message = "🎉 Great job! Keep it up!";
-
-  } else if (percentage >= 60) {
-
-    message = "👍 Good work! A little more practice will help.";
-
-  } else if (percentage >= 40) {
-
-    message = "📚 Keep practising and revise your topics.";
-
-  } else {
-
-    message = "💪 Don't give up! Study again and try once more.";
-
-  }
-
-  document.getElementById("resultMessage")
-    .textContent = message;
-
-  document.getElementById("resultBox")
-    .scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-}
+      <div class="note">
+        ${data.notes}
+      </div>
 
 
-/* =========================================================
-   RESTART TEST
-   ========================================================= */
+      <!-- IMPORTANT CONCEPTS -->
 
-function restartTest() {
+      <h2 style="margin-top:30px;">
+        💡 Important Concepts
+      </h2>
 
-  startTest(selectedSubject);
+      <div class="note">
+        ${data.concepts}
+      </div>
 
-}
+
+      <!-- DPP -->
+
+      <h2 style="margin-top:30px;">
+        📝 Daily Practice Problems
+      </h2>
+
+      <div>
+        ${data.dpp}
+      </div>
 
 
-/* =========================================================
-   CLOSE TEST
-   ========================================================= */
+      <!-- DPP ANSWERS -->
 
-function closeTest() {
+      <h2 style="margin-top:30px;">
+        ✅ DPP Solutions
+      </h2>
 
-  document.getElementById("resultBox")
-    .classList.add("hidden");
+      <div class="note">
+        ${data.answers}
+      </div>
 
-  document.getElementById("testArea")
-    .classList.add("hidden");
+
+      <!-- VIDEO -->
+
+      <h2 style="margin-top:30px;">
+        🎥 Video Solution
+      </h2>
+
+      <div class="note">
+
+        <p>
+          Watch the video solution for
+          <strong>${chapter}</strong>.
+        </p>
+
+        <a
+          class="button primary"
+          href="${data.video}"
+          target="_blank">
+          ▶ Watch Video Solution
+        </a>
+
+      </div>
+
+
+      <!-- TEST -->
+
+      <h2 style="margin-top:30px;">
+        🧪 Chapter Test
+      </h2>
+
+      <div id="test-${className}-${slug(chapter)}">
+
+        ${questions.map((q,index) => `
+
+          <div class="question">
+
+            <strong>
+              ${index + 1}. ${q.q}
+            </strong>
+
+            ${q.o.map((option,i) => `
+
+              <label class="option">
+
+                <input
+                  type="radio"
+                  name="q-${className}-${slug(chapter)}-${index}"
+                  value="${i}">
+
+                ${option}
+
+              </label>
+
+            `).join("")}
+
+          </div>
+
+        `).join("")}
+
+        <button
+          class="button primary"
+          onclick="submitTest(
+            '${className}',
+            '${escapeQuotes(subject)}',
+            '${escapeQuotes(chapter)}'
+          )">
+
+          Submit Test
+
+        </button>
+
+        <div
+          id="result-${className}-${slug(chapter)}"
+          style="margin-top:20px;">
+        </div>
+
+      </div>
+
+
+      <!-- QUICK REVISION -->
+
+      <h2 style="margin-top:30px;">
+        📌 Quick Revision
+      </h2>
+
+      <div class="note">
+        ${data.revision}
+      </div>
+
+    </div>
+  `;
+
+  content.innerHTML = html;
 
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-
-}
-
-</script>
-  <style>
-
-/* =====================================================
-   STUDYHUB DETAILED DESIGN
-   ===================================================== */
-
-.study-content{
-  max-width:1150px;
-  margin:40px auto;
-  padding:20px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.section-title h2{
-  font-size:32px;
-  margin-bottom:8px;
-}
-
-.section-title p{
-  color:#64748b;
 }
 
 
-/* CLASS BUTTONS */
+/* ================================
+   TEST SYSTEM
+================================ */
 
-.class-buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:35px;
-}
+function getQuestions(className, subject, chapter) {
 
-.class-buttons button,
-.test-selector button{
-  border:0;
-  padding:13px 22px;
-  border-radius:12px;
-  background:#4f46e5;
-  color:white;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.2s;
-}
+  const key =
+    `${className}|${subject}|${chapter}`;
 
-.class-buttons button:hover,
-.test-selector button:hover{
-  transform:translateY(-2px);
-  opacity:.9;
-}
-
-
-/* SUBJECT GRID */
-
-.subject-grid{
-  display:grid;
-  grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-  gap:22px;
-  margin-bottom:50px;
-}
-
-
-/* STUDY CARD */
-
-.study-card{
-  background:white;
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-  transition:.25s;
-}
-
-.study-card:hover{
-  transform:translateY(-5px);
-}
-
-.study-card h3{
-  font-size:22px;
-  margin:12px 0;
-}
-
-.study-card h4{
-  margin-top:20px;
-  margin-bottom:8px;
-  color:#4f46e5;
-}
-
-.study-card p{
-  line-height:1.7;
-  color:#475569;
-}
-
-.card-icon{
-  font-size:42px;
-}
-
-.subtitle{
-  text-align:center;
-  margin-bottom:25px;
-}
-
-
-/* DETAILS */
-
-details{
-  margin-top:15px;
-}
-
-summary{
-  cursor:pointer;
-  padding:12px;
-  border-radius:10px;
-  background:#eef2ff;
-  color:#4338ca;
-  font-weight:bold;
-}
-
-summary:hover{
-  background:#e0e7ff;
-}
-
-
-/* TEST SECTION */
-
-.test-section{
-  margin-top:60px;
-  padding:35px 20px;
-  background:#eef2ff;
-  border-radius:25px;
-}
-
-.test-selector{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:30px;
-}
-
-
-/* TEST AREA */
-
-.test-area{
-  max-width:750px;
-  margin:25px auto;
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.test-header{
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.test-header h2{
-  margin-bottom:8px;
-}
-
-#questionBox h3{
-  font-size:20px;
-  line-height:1.5;
-  margin-bottom:20px;
-}
-
-
-/* OPTIONS */
-
-.options{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.option-button{
-  width:100%;
-  padding:15px;
-  border:2px solid #e2e8f0;
-  border-radius:12px;
-  background:white;
-  text-align:left;
-  cursor:pointer;
-  font-size:16px;
-  transition:.2s;
-}
-
-.option-button:hover{
-  background:#f1f5f9;
-  border-color:#818cf8;
-}
-
-.option-button:disabled{
-  cursor:default;
-}
-
-.option-button.correct{
-  background:#dcfce7;
-  border-color:#22c55e;
-  color:#166534;
-}
-
-.option-button.wrong{
-  background:#fee2e2;
-  border-color:#ef4444;
-  color:#991b1b;
-}
-
-
-/* NEXT BUTTON */
-
-.next-question{
-  display:none;
-  margin:25px auto 0;
-  padding:13px 25px;
-  border:0;
-  border-radius:12px;
-  background:#4f46e5;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-
-/* RESULT */
-
-.result-box{
-  max-width:650px;
-  margin:30px auto;
-  background:white;
-  padding:40px 25px;
-  text-align:center;
-  border-radius:25px;
-  box-shadow:0 5px 25px rgba(0,0,0,.1);
-}
-
-.result-icon{
-  font-size:60px;
-  margin-bottom:10px;
-}
-
-.result-box h2{
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-.result-box p{
-  color:#64748b;
-}
-
-.score-display{
-  font-size:55px;
-  font-weight:bold;
-  color:#4f46e5;
-  margin:20px 0;
-}
-
-.result-box h3{
-  margin:20px 0;
-}
-
-.result-box button{
-  border:0;
-  padding:13px 20px;
-  margin:6px;
-  border-radius:12px;
-  background:#4f46e5;
-  color:white;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-
-/* MOBILE */
-
-@media(max-width:650px){
-
-  .study-content{
-    padding:15px;
+  if (testBank[key]) {
+    return testBank[key];
   }
 
-  .section-title h2{
-    font-size:26px;
-  }
-
-  .subject-grid{
-    grid-template-columns:1fr;
-  }
-
-  .test-area{
-    padding:20px;
-  }
-
-  .test-section{
-    padding:25px 12px;
-  }
-
-  .option-button{
-    font-size:15px;
-  }
-
-  .score-display{
-    font-size:45px;
-  }
-
+  return [
+    {
+      q: `Which statement is most important when studying ${chapter}?`,
+      o: [
+        "Understand the concept",
+        "Memorise without understanding",
+        "Skip practice",
+        "Avoid revision"
+      ],
+      a: 0
+    },
+    {
+      q: `What should you do after learning ${chapter}?`,
+      o: [
+        "Practise questions",
+        "Stop studying",
+        "Skip the exercises",
+        "Avoid revision"
+      ],
+      a: 0
+    },
+    {
+      q: "Which habit improves preparation?",
+      o: [
+        "Regular practice",
+        "Never revising",
+        "Skipping tests",
+        "Studying only once"
+      ],
+      a: 0
+    },
+    {
+      q: "What is useful before an examination?",
+      o: [
+        "Quick revision",
+        "Ignoring mistakes",
+        "Skipping practice",
+        "Avoiding questions"
+      ],
+      a: 0
+    },
+    {
+      q: "What should you check after a test?",
+      o: [
+        "Your mistakes",
+        "Only your score",
+        "Nothing",
+        "Only the questions you knew"
+      ],
+      a: 0
+    }
+  ];
 }
 
+function submitTest(className, subject, chapter) {
 
-/* DARK MODE */
+  const questions =
+    getQuestions(className, subject, chapter);
 
-body.dark .study-content{
-  color:#f8fafc;
-}
+  let score = 0;
 
-body.dark .study-card,
-body.dark .test-area,
-body.dark .result-box{
-  background:#1e293b;
-  color:#f8fafc;
-}
+  questions.forEach((q,index) => {
 
-body.dark .study-card p,
-body.dark .result-box p{
-  color:#cbd5e1;
-}
+    const selected =
+      document.querySelector(
+        `input[name="q-${className}-${slug(chapter)}-${index}"]:checked`
+      );
 
-body.dark summary{
-  background:#312e81;
-  color:#e0e7ff;
-}
+    if (selected &&
+        Number(selected.value) === q.a) {
 
-body.dark .test-section{
-  background:#1e293b;
-}
-
-body.dark .option-button{
-  background:#334155;
-  border-color:#475569;
-  color:#f8fafc;
-}
-
-body.dark .option-button:hover{
-  background:#475569;
-}
-
-body.dark .option-button.correct{
-  background:#14532d;
-  border-color:#22c55e;
-}
-
-body.dark .option-button.wrong{
-  background:#7f1d1d;
-  border-color:#ef4444;
-}
-
-</style>
-
-
-<script>
-
-/* =====================================================
-   STUDYHUB INITIAL SETUP
-   ===================================================== */
-
-document.addEventListener("DOMContentLoaded",function(){
-
-  /*
-    Class 8 is shown when the page opens.
-  */
-
-  showClass(8);
-
-});
-
-
-/* =====================================================
-   SEARCH SUPPORT
-   ===================================================== */
-
-function studyHubSearch(){
-
-  const input =
-    document.getElementById("searchBox");
-
-  if(!input) return;
-
-  const value =
-    input.value.toLowerCase().trim();
-
-  const cards =
-    document.querySelectorAll(".study-card");
-
-  cards.forEach(function(card){
-
-    const text =
-      card.innerText.toLowerCase();
-
-    if(value === "" || text.includes(value)){
-
-      card.style.display="block";
-
-    }else{
-
-      card.style.display="none";
+      score++;
 
     }
 
   });
 
+  const percentage =
+    Math.round((score / questions.length) * 100);
+
+  const result =
+    document.getElementById(
+      `result-${className}-${slug(chapter)}`
+    );
+
+  result.innerHTML = `
+    <div class="result">
+
+      <h3>🎉 Test Completed</h3>
+
+      <div class="score">
+        ${score}/${questions.length}
+      </div>
+
+      <p>
+        Percentage: <strong>${percentage}%</strong>
+      </p>
+
+      <p style="margin-top:10px;">
+        ${getMessage(percentage)}
+      </p>
+
+    </div>
+  `;
+}
+
+function getMessage(percentage) {
+
+  if (percentage >= 90)
+    return "Excellent! 🌟";
+
+  if (percentage >= 75)
+    return "Very good! Keep practising. 👍";
+
+  if (percentage >= 50)
+    return "Good effort. Revise and try again. 📚";
+
+  return "Keep practising. You can improve! 💪";
 }
 
 
-/* =====================================================
-   KEYBOARD SUPPORT
-   ===================================================== */
+/* ================================
+   SEARCH
+================================ */
 
-document.addEventListener("keydown",function(event){
+function searchWebsite() {
 
-  if(event.key==="Escape"){
+  const query =
+    document.getElementById("searchBox")
+      .value
+      .toLowerCase()
+      .trim();
 
-    const result =
-      document.getElementById("resultBox");
+  if (!query) {
 
-    const test =
-      document.getElementById("testArea");
-
-    if(result){
-      result.classList.add("hidden");
-    }
-
-    if(test){
-      test.classList.add("hidden");
-    }
-
-  }
-
-});
-
-
-/* =====================================================
-   SAVE LAST RESULT
-   ===================================================== */
-
-function saveTestResult(){
-
-  if(!currentTest || currentTest.length===0){
+    showHome();
     return;
+
   }
 
-  const result = {
+  const results = [];
 
-    subject:selectedSubject,
+  Object.keys(studyData).forEach(className => {
 
-    score:score,
+    Object.keys(studyData[className]).forEach(subject => {
 
-    total:currentTest.length,
+      Object.keys(
+        studyData[className][subject]
+      ).forEach(chapter => {
 
-    percentage:
-      Math.round(
-        (score/currentTest.length)*100
-      ),
+        if (
+          chapter.toLowerCase().includes(query) ||
+          subject.toLowerCase().includes(query) ||
+          className.includes(query)
+        ) {
 
-    date:
-      new Date().toLocaleString()
+          results.push({
+            className,
+            subject,
+            chapter
+          });
 
+        }
+
+      });
+
+    });
+
+  });
+
+  document.getElementById("home")
+    .classList.add("hidden");
+
+  const content =
+    document.getElementById("content");
+
+  content.classList.remove("hidden");
+
+  let html = `
+    <div class="panel">
+
+      <button
+        class="button secondary"
+        onclick="showHome()">
+        ← Home
+      </button>
+
+      <h2 class="section-title">
+        🔍 Search Results
+      </h2>
+  `;
+
+  if (results.length === 0) {
+
+    html += `
+      <div class="note">
+        No matching chapter found.
+      </div>
+    `;
+
+  } else {
+
+    html += `<div class="grid">`;
+
+    results.forEach(item => {
+
+      html += `
+        <div class="card"
+          onclick="openChapter(
+            '${item.className}',
+            '${escapeQuotes(item.subject)}',
+            '${escapeQuotes(item.chapter)}'
+          )">
+
+          <div class="icon">📚</div>
+
+          <h3>${item.chapter}</h3>
+
+          <p>
+            Class ${item.className} •
+            ${item.subject}
+          </p>
+
+        </div>
+      `;
+
+    });
+
+    html += `</div>`;
+
+  }
+
+  html += `</div>`;
+
+  content.innerHTML = html;
+}
+
+
+/* ================================
+   HELPERS
+================================ */
+
+function slug(text) {
+
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g,"-");
+
+}
+
+function escapeQuotes(text) {
+
+  return text
+    .replace(/\\/g,"\\\\")
+    .replace(/'/g,"\\'");
+
+}
+
+function getSubjectIcon(subject) {
+
+  const icons = {
+    "Mathematics":"🔢",
+    "Science":"🔬",
+    "English":"📖",
+    "Hindi":"🪔",
+    "Social Science":"🌍",
+    "Social Studies":"🌍",
+    "Computer":"💻"
   };
 
-  localStorage.setItem(
-    "studyhubLastResult",
-    JSON.stringify(result)
-  );
-
+  return icons[subject] || "📚";
 }
 
+</script>
+  <script>
 
-/* =====================================================
-   UPDATE RESULT FUNCTION
-   ===================================================== */
+/* =========================================
+   LEARNSPHERE - CLASS 8 MATHEMATICS
+   CURRENT NCERT - GANITA PRAKASH
+========================================= */
 
-const originalShowResult =
-  showResult;
+const studyData = {
 
-showResult=function(){
+  "8": {
 
-  originalShowResult();
+    "Mathematics": {
 
-  saveTestResult();
+      "Large Numbers Around Us": {
+
+        notes: `
+          <h3>Understanding Large Numbers</h3>
+          <p>
+            Large numbers are numbers with many digits. We use them
+            to describe populations, distances, money, data and other
+            quantities in everyday life.
+          </p>
+
+          <h3>Place Value</h3>
+          <p>
+            The value of a digit depends on its position in a number.
+            Moving one place to the left multiplies the place value by 10.
+          </p>
+
+          <h3>Indian and International Systems</h3>
+          <p>
+            In the Indian system, places include ones, tens, hundreds,
+            thousands, lakhs and crores. In the international system,
+            places include ones, thousands, millions and billions.
+          </p>
+
+          <h3>Estimation</h3>
+          <p>
+            Large quantities are often estimated by rounding numbers
+            to convenient values. Estimation helps us check whether
+            an answer is reasonable.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Understand place value.</li>
+            <li>Read and write large numbers.</li>
+            <li>Compare large numbers.</li>
+            <li>Use Indian and international number systems.</li>
+            <li>Round numbers for estimation.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Write 7,45,32,109 in words using the Indian system.</li>
+            <li>Write forty-five million six hundred thousand in figures.</li>
+            <li>Which is greater: 8,75,00,000 or 87,500,000?</li>
+            <li>Round 8,76,543 to the nearest thousand.</li>
+            <li>Why is estimation useful in everyday calculations?</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>Seven crore forty-five lakh thirty-two thousand one hundred nine.</li>
+            <li>45,600,000.</li>
+            <li>They represent the same number.</li>
+            <li>877,000.</li>
+            <li>It helps us obtain a quick reasonable value and check calculations.</li>
+          </ol>
+        `,
+
+        revision: `
+          Place value → Number systems → Comparison → Rounding → Estimation.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Large+Numbers+Around+Us+solution"
+      },
+
+
+      "Arithmetic Expressions": {
+
+        notes: `
+          <h3>Arithmetic Expressions</h3>
+          <p>
+            An arithmetic expression is a combination of numbers and
+            mathematical operations such as addition, subtraction,
+            multiplication and division.
+          </p>
+
+          <h3>Order of Operations</h3>
+          <p>
+            When an expression contains several operations, we must
+            follow the correct order. Brackets are handled first,
+            followed by multiplication and division, and then addition
+            and subtraction.
+          </p>
+
+          <h3>Using Brackets</h3>
+          <p>
+            Brackets help group parts of an expression and determine
+            which operations should be performed first.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Arithmetic expressions.</li>
+            <li>Operations and their order.</li>
+            <li>Use of brackets.</li>
+            <li>Evaluating expressions.</li>
+            <li>Checking calculations.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Evaluate: 18 + 6 × 4.</li>
+            <li>Evaluate: (18 + 6) × 4.</li>
+            <li>Evaluate: 72 ÷ 8 + 5.</li>
+            <li>Insert brackets to make an expression meaningful.</li>
+            <li>Explain why the order of operations is important.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>42.</li>
+            <li>96.</li>
+            <li>14.</li>
+            <li>Answers depend on the required target value.</li>
+            <li>It ensures that the same expression gives a consistent result.</li>
+          </ol>
+        `,
+
+        revision: `
+          Brackets → Multiplication/Division → Addition/Subtraction.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Arithmetic+Expressions+solution"
+      },
+
+
+      "A Peek Beyond the Point": {
+
+        notes: `
+          <h3>Numbers Beyond Whole Numbers</h3>
+          <p>
+            Decimal numbers allow us to represent quantities between
+            whole numbers. They are useful for measurements, money and
+            many real-life situations.
+          </p>
+
+          <h3>Decimal Place Value</h3>
+          <p>
+            To the right of the decimal point are tenths, hundredths,
+            thousandths and so on.
+          </p>
+
+          <h3>Comparing Decimals</h3>
+          <p>
+            Decimals can be compared by comparing their whole-number
+            parts first and then their decimal parts.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Decimal notation.</li>
+            <li>Decimal place value.</li>
+            <li>Comparing decimals.</li>
+            <li>Equivalent decimal representations.</li>
+            <li>Decimal calculations.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Write 4.75 in words.</li>
+            <li>Which is greater: 5.07 or 5.7?</li>
+            <li>Write 3.5 as a decimal with two decimal places.</li>
+            <li>Add 4.25 and 3.75.</li>
+            <li>Subtract 2.35 from 7.50.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>Four and seventy-five hundredths.</li>
+            <li>5.7.</li>
+            <li>3.50.</li>
+            <li>8.00.</li>
+            <li>5.15.</li>
+          </ol>
+        `,
+
+        revision: `
+          Decimal point → Tenths → Hundredths → Thousandths → Comparison.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+A+Peek+Beyond+the+Point+solution"
+      },
+
+
+      "Expressions using Letter-Numbers": {
+
+        notes: `
+          <h3>Variables</h3>
+          <p>
+            A letter can represent an unknown or changing number.
+            Such a letter is called a variable.
+          </p>
+
+          <h3>Algebraic Expressions</h3>
+          <p>
+            Expressions containing numbers, variables and operations
+            are called algebraic expressions.
+          </p>
+
+          <h3>Terms and Coefficients</h3>
+          <p>
+            Parts separated by addition or subtraction signs are terms.
+            The numerical factor multiplying a variable is its coefficient.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Variables.</li>
+            <li>Constants.</li>
+            <li>Terms.</li>
+            <li>Coefficients.</li>
+            <li>Algebraic expressions.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Identify the variable in 5x + 7.</li>
+            <li>Identify the coefficient of y in 9y.</li>
+            <li>How many terms are there in 3a + 2b - 5?</li>
+            <li>Evaluate 2x + 3 when x = 4.</li>
+            <li>Write an expression for five more than x.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>x.</li>
+            <li>9.</li>
+            <li>Three terms.</li>
+            <li>11.</li>
+            <li>x + 5.</li>
+          </ol>
+        `,
+
+        revision: `
+          Variable → Constant → Term → Coefficient → Expression.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Expressions+using+Letter+Numbers+solution"
+      },
+
+
+      "Parallel and Intersecting Lines": {
+
+        notes: `
+          <h3>Lines</h3>
+          <p>
+            A line extends indefinitely in both directions. Two lines
+            may intersect at one point or may remain parallel.
+          </p>
+
+          <h3>Parallel Lines</h3>
+          <p>
+            Parallel lines lie in the same plane and never meet,
+            however far they are extended.
+          </p>
+
+          <h3>Intersecting Lines</h3>
+          <p>
+            Intersecting lines meet at a point and form angles.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Lines and line segments.</li>
+            <li>Parallel lines.</li>
+            <li>Intersecting lines.</li>
+            <li>Angles formed by lines.</li>
+            <li>Geometric reasoning.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Define parallel lines.</li>
+            <li>What are intersecting lines?</li>
+            <li>How many points can two distinct lines have in common?</li>
+            <li>Give two real-life examples of parallel lines.</li>
+            <li>What type of angle can be formed when two perpendicular lines meet?</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>Lines in the same plane that never meet.</li>
+            <li>Lines that meet at a point.</li>
+            <li>At most one point.</li>
+            <li>Railway tracks and opposite edges of a ruler.</li>
+            <li>A right angle.</li>
+          </ol>
+        `,
+
+        revision: `
+          Parallel lines never meet. Intersecting lines meet at a point.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Parallel+and+Intersecting+Lines+solution"
+      },
+
+
+      "Number Play": {
+
+        notes: `
+          <h3>Exploring Numbers</h3>
+          <p>
+            Number patterns can reveal interesting relationships and
+            help us discover mathematical rules.
+          </p>
+
+          <h3>Patterns</h3>
+          <p>
+            A sequence is a list of numbers arranged according to a
+            rule. Finding the rule allows us to predict later terms.
+          </p>
+
+          <h3>Reasoning</h3>
+          <p>
+            Number puzzles encourage us to test patterns, make
+            conjectures and verify them with examples.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Number patterns.</li>
+            <li>Sequences.</li>
+            <li>Rules and relationships.</li>
+            <li>Mathematical reasoning.</li>
+            <li>Verification of patterns.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Find the next two terms: 2, 4, 6, 8, ...</li>
+            <li>Find the rule in 5, 10, 15, 20, ...</li>
+            <li>Find the next term: 1, 4, 9, 16, ...</li>
+            <li>Create a sequence with a constant difference of 7.</li>
+            <li>Explain how you can verify a number pattern.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>10, 12.</li>
+            <li>Add 5 each time.</li>
+            <li>25.</li>
+            <li>Example: 3, 10, 17, 24, ...</li>
+            <li>Check whether the proposed rule works for several terms.</li>
+          </ol>
+        `,
+
+        revision: `
+          Pattern → Rule → Prediction → Verification.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Number+Play+solution"
+      },
+
+
+      "A Tale of Three Intersecting Lines": {
+
+        notes: `
+          <h3>Three Lines</h3>
+          <p>
+            Three lines can be arranged in different ways. Their
+            intersections create points, angles and regions.
+          </p>
+
+          <h3>Geometric Reasoning</h3>
+          <p>
+            Drawing diagrams carefully and counting intersections helps
+            us discover geometric patterns.
+          </p>
+
+          <h3>Angles</h3>
+          <p>
+            Intersecting lines create angles. The relationships between
+            these angles can be used to solve geometric problems.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Three intersecting lines.</li>
+            <li>Intersection points.</li>
+            <li>Angles formed by lines.</li>
+            <li>Geometric patterns.</li>
+            <li>Reasoning from diagrams.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>What is an intersection point?</li>
+            <li>How many intersection points can three lines have at most?</li>
+            <li>What happens when two lines are perpendicular?</li>
+            <li>Draw three lines that meet at one common point.</li>
+            <li>Describe one possible arrangement where the three lines do not all meet at one point.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>The point where two or more lines meet.</li>
+            <li>Three, when every pair intersects at a different point.</li>
+            <li>They form four right angles.</li>
+            <li>Any correct diagram with all three lines through one point.</li>
+            <li>Three lines with three separate pairwise intersections.</li>
+          </ol>
+        `,
+
+        revision: `
+          Lines → Intersections → Angles → Patterns → Geometric reasoning.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+A+Tale+of+Three+Intersecting+Lines+solution"
+      },
+
+
+      "Working with Fractions": {
+
+        notes: `
+          <h3>Fractions</h3>
+          <p>
+            A fraction represents a part of a whole or a quotient.
+            The numerator is written above the denominator.
+          </p>
+
+          <h3>Equivalent Fractions</h3>
+          <p>
+            Multiplying or dividing the numerator and denominator by
+            the same non-zero number gives an equivalent fraction.
+          </p>
+
+          <h3>Operations</h3>
+          <p>
+            Fractions can be added, subtracted, multiplied and divided
+            using appropriate rules.
+          </p>
+        `,
+
+        concepts: `
+          <ul>
+            <li>Numerator and denominator.</li>
+            <li>Equivalent fractions.</li>
+            <li>Simplification.</li>
+            <li>Addition and subtraction.</li>
+            <li>Multiplication and division.</li>
+          </ul>
+        `,
+
+        dpp: `
+          <ol>
+            <li>Simplify 12/18.</li>
+            <li>Find an equivalent fraction for 3/5 with denominator 20.</li>
+            <li>Add 1/4 and 2/4.</li>
+            <li>Subtract 3/8 from 7/8.</li>
+            <li>Multiply 2/3 by 3/5.</li>
+          </ol>
+        `,
+
+        answers: `
+          <ol>
+            <li>2/3.</li>
+            <li>12/20.</li>
+            <li>3/4.</li>
+            <li>1/2.</li>
+            <li>2/5.</li>
+          </ol>
+        `,
+
+        revision: `
+          Fraction → Equivalent fraction → Simplification → Operations.
+        `,
+
+        video:
+          "https://www.youtube.com/results?search_query=Class+8+Ganita+Prakash+Working+with+Fractions+solution"
+      }
+
+    }
+
+  }
 
 };
 
 
-/* =====================================================
-   WELCOME MESSAGE
-   ===================================================== */
+/* =========================================
+   TEST BANK - CLASS 8 MATHEMATICS
+========================================= */
 
-setTimeout(function(){
+const testBank = {
 
-  console.log(
-    "📚 Welcome to StudyHub!"
-  );
+  "8|Mathematics|Large Numbers Around Us": [
+    {
+      q: "Which place comes after lakh in the Indian number system?",
+      o: ["Thousand", "Crore", "Hundred", "Million"],
+      a: 1
+    },
+    {
+      q: "What is 1 lakh?",
+      o: ["10,000", "1,00,000", "10,00,000", "1,000"],
+      a: 1
+    },
+    {
+      q: "Why do we use estimation?",
+      o: [
+        "To obtain a reasonable approximate value",
+        "To make numbers larger",
+        "To avoid calculations",
+        "To change units"
+      ],
+      a: 0
+    }
+  ],
 
-},500);
+  "8|Mathematics|Arithmetic Expressions": [
+    {
+      q: "Which operation is generally performed first after brackets?",
+      o: [
+        "Addition",
+        "Subtraction",
+        "Multiplication or division",
+        "None"
+      ],
+      a: 2
+    },
+    {
+      q: "What is 5 + 3 × 2?",
+      o: ["16", "11", "13", "10"],
+      a: 1
+    },
+    {
+      q: "What is (5 + 3) × 2?",
+      o: ["16", "11", "13", "10"],
+      a: 0
+    }
+  ],
+
+  "8|Mathematics|A Peek Beyond the Point": [
+    {
+      q: "Which digit is immediately to the right of the decimal point?",
+      o: ["Ones", "Tenths", "Hundreds", "Thousands"],
+      a: 1
+    },
+    {
+      q: "Which is greater?",
+      o: ["5.07", "5.7", "They are different but smaller", "0"],
+      a: 1
+    },
+    {
+      q: "What is 4.25 + 3.75?",
+      o: ["7", "8", "8.25", "7.50"],
+      a: 1
+    }
+  ],
+
+  "8|Mathematics|Expressions using Letter-Numbers": [
+    {
+      q: "What is a letter representing a number called?",
+      o: ["Variable", "Constant", "Operator", "Term"],
+      a: 0
+    },
+    {
+      q: "What is the coefficient of 7x?",
+      o: ["x", "7", "0", "1"],
+      a: 1
+    },
+    {
+      q: "What is 2x + 3 when x = 4?",
+      o: ["8", "10", "11", "12"],
+      a: 2
+    }
+  ],
+
+  "8|Mathematics|Parallel and Intersecting Lines": [
+    {
+      q: "Parallel lines:",
+      o: [
+        "Always meet",
+        "Never meet in the same plane",
+        "Always form a right angle",
+        "Have one common point"
+      ],
+      a: 1
+    },
+    {
+      q: "Two perpendicular lines form:",
+      o: [
+        "Acute angles only",
+        "Right angles",
+        "Straight angles only",
+        "No angles"
+      ],
+      a: 1
+    },
+    {
+      q: "Two distinct intersecting lines have:",
+      o: ["No common point", "One common point", "Two common points", "Infinite common points"],
+      a: 1
+    }
+  ],
+
+  "8|Mathematics|Number Play": [
+    {
+      q: "What is the next term of 2, 4, 6, 8?",
+      o: ["9", "10", "12", "16"],
+      a: 1
+    },
+    {
+      q: "A sequence follows a rule. What should we do to verify the rule?",
+      o: [
+        "Check several terms",
+        "Check nothing",
+        "Change the sequence",
+        "Ignore the rule"
+      ],
+      a: 0
+    },
+    {
+      q: "What is the next square number after 16?",
+      o: ["18", "20", "25", "32"],
+      a: 2
+    }
+  ],
+
+  "8|Mathematics|A Tale of Three Intersecting Lines": [
+    {
+      q: "What is an intersection point?",
+      o: [
+        "A point where lines meet",
+        "A line segment",
+        "A circle",
+        "A parallel line"
+      ],
+      a: 0
+    },
+    {
+      q: "Two perpendicular lines form:",
+      o: [
+        "Four right angles",
+        "Two acute angles",
+        "One angle",
+        "No angle"
+      ],
+      a: 0
+    },
+    {
+      q: "Three lines can have three distinct pairwise intersection points.",
+      o: ["True", "False"],
+      a: 0
+    }
+  ],
+
+  "8|Mathematics|Working with Fractions": [
+    {
+      q: "What is the numerator of 3/7?",
+      o: ["3", "7", "10", "4"],
+      a: 0
+    },
+    {
+      q: "What is 1/4 + 2/4?",
+      o: ["1/2", "3/4", "2/8", "1"],
+      a: 1
+    },
+    {
+      q: "What is 2/3 × 3/5?",
+      o: ["2/5", "3/5", "2/8", "6/15"],
+      a: 0
+    }
+  ]
+
+};
 
 </script>
-  <!-- =========================================================
-     PART 5 — NEW LEARNING BRAND
-     ========================================================= -->
+  <script>
 
-<style>
+/* =========================================
+   LEARNSPHERE - EXTRA CLASS DATA
+========================================= */
 
-.learnsphere-brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  cursor:pointer;
-}
+/*
+   Additional subjects will be added here.
+   Keep this object separate from studyData so
+   there are no duplicate-const errors.
+*/
 
-.learnsphere-logo{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#4f46e5,#7c3aed);
-  color:white;
-  font-size:23px;
-  box-shadow:0 5px 15px rgba(79,70,229,.25);
-}
+const additionalSubjects = {
 
-.learnsphere-name{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
+  "8": {
+    "Science": {},
+    "English": {},
+    "Hindi": {},
+    "Social Science": {}
+  },
 
-.learnsphere-name strong{
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:-.4px;
-  color:#1e293b;
-}
+  "9": {
+    "Mathematics": {},
+    "Science": {},
+    "English": {},
+    "Hindi": {},
+    "Social Science": {}
+  },
 
-.learnsphere-name span{
-  margin-top:4px;
-  font-size:9px;
-  font-weight:700;
-  color:#64748b;
-  letter-spacing:.8px;
-  text-transform:uppercase;
-}
-
-@media(max-width:600px){
-
-  .learnsphere-logo{
-    width:38px;
-    height:38px;
-    font-size:20px;
+  "10": {
+    "Mathematics": {},
+    "Science": {},
+    "English": {},
+    "Hindi": {},
+    "Social Science": {}
   }
 
-  .learnsphere-name strong{
-    font-size:17px;
+};
+
+
+/* =========================================
+   ADD EMPTY SUBJECTS SAFELY
+========================================= */
+
+Object.keys(additionalSubjects).forEach(className => {
+
+  if (!studyData[className]) {
+    studyData[className] = {};
   }
 
-  .learnsphere-name span{
-    font-size:7px;
-  }
+  Object.keys(additionalSubjects[className]).forEach(subject => {
 
-}
-
-body.dark .learnsphere-name strong{
-  color:#f8fafc;
-}
-
-body.dark .learnsphere-name span{
-  color:#cbd5e1;
-}
-
-</style>
-
-
-<script>
-
-/* =========================================================
-   CHANGE OLD STUDYHUB BRAND TO LEARNSPHERE
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function(){
-
-  const elements = document.querySelectorAll(
-    "header *, nav *, .navbar *, .header *, .logo *, .brand *"
-  );
-
-  elements.forEach(function(element){
-
-    const text = element.textContent
-      .trim()
-      .toLowerCase();
-
-    if(
-      text === "studyhub" ||
-      text === "study hub"
-    ){
-
-      element.innerHTML = `
-
-        <div class="learnsphere-brand">
-
-          <div class="learnsphere-logo">
-            🎓
-          </div>
-
-          <div class="learnsphere-name">
-
-            <strong>LearnSphere</strong>
-
-            <span>
-              Learn • Practice • Succeed
-            </span>
-
-          </div>
-
-        </div>
-
-      `;
-
+    if (!studyData[className][subject]) {
+      studyData[className][subject] =
+        additionalSubjects[className][subject];
     }
 
   });
 
 });
 
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+const darkStyle = document.createElement("style");
+
+darkStyle.innerHTML = `
+  body.dark {
+    background:#111827;
+    color:#f9fafb;
+  }
+
+  body.dark .card,
+  body.dark .panel {
+    background:#1f2937;
+    color:#f9fafb;
+  }
+
+  body.dark .card p {
+    color:#d1d5db;
+  }
+
+  body.dark .note {
+    background:#312e81;
+    color:#f9fafb;
+  }
+
+  .question {
+    background:#f8fafc;
+    padding:18px;
+    margin:15px 0;
+    border-radius:12px;
+  }
+
+  body.dark .question {
+    background:#374151;
+  }
+
+  .option {
+    display:block;
+    padding:10px;
+    margin-top:8px;
+    cursor:pointer;
+  }
+
+  .result {
+    padding:20px;
+    border-radius:15px;
+    background:#ecfdf5;
+    color:#065f46;
+    text-align:center;
+  }
+
+  body.dark .result {
+    background:#064e3b;
+    color:#d1fae5;
+  }
+
+  .score {
+    font-size:38px;
+    font-weight:bold;
+    margin:10px;
+  }
+
+  .badge {
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    background:#e9e7ff;
+    color:#4338ca;
+    font-size:13px;
+  }
+`;
+
+document.head.appendChild(darkStyle);
+
+
+/* =========================================
+   INITIAL PAGE
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function() {
+
+  console.log("LearnSphere loaded successfully.");
+
+});
+
 </script>
+
 </body>
 </html>
